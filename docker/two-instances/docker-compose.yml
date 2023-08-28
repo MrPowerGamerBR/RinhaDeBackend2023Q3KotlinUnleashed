@@ -14,7 +14,7 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.35'
+          cpus: '0.4'
           memory: '1.0GB'
     environment:
       POSTGRESQL_ADDRESS: db
@@ -44,7 +44,7 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.35'
+          cpus: '0.4'
           memory: '1.0GB'
     environment:
       POSTGRESQL_ADDRESS: db
@@ -64,7 +64,7 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.5'
+          cpus: '0.4'
           memory: '0.5GB'
     environment:
       POSTGRES_USER: postgres
