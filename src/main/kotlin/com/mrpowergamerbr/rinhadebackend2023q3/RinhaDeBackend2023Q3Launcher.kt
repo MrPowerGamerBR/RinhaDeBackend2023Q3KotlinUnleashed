@@ -2,8 +2,11 @@ package com.mrpowergamerbr.rinhadebackend2023q3
 
 import kotlinx.coroutines.debug.DebugProbes
 import kotlinx.coroutines.runBlocking
+import mu.KotlinLogging
 
 object RinhaDeBackend2023Q3Launcher {
+    private val logger = KotlinLogging.logger {}
+
     @JvmStatic
     fun main(args: Array<String>) {
         // Enable coroutine names, they are visible when dumping the coroutines
@@ -18,8 +21,17 @@ object RinhaDeBackend2023Q3Launcher {
 
         val database = Database.createPool()
         runBlocking {
-            database.createTables()
+            while (true) {
+                try {
+                    database.createTables()
+                    break
+                } catch (e: Exception) {
+                    logger.warn(e) { "Something went wrong while trying to create the tables! Retrying again later..." }
+                    Thread.sleep(2_000)
+                }
+            }
         }
+
         val m = RinhaDeBackend2023Q3(database)
         m.start()
     }
