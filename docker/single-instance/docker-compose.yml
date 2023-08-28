@@ -1,7 +1,7 @@
 version: '3.5'
 services:
   rinha1:
-    image: ghcr.io/mrpowergamerbr/rinha-de-backend-2023-q3-unleashed@sha256:f0909ffd2fc36de369bfee5762d1c5fcd1fb9960cb67d0a9cf55f83691e5fd2e
+    image: ghcr.io/mrpowergamerbr/rinha-de-backend-2023-q3-unleashed@sha256:c4390f8133729aca18e0d785b9d47fc2173a15c7a7bff0b987d8238a4a20899d
     hostname: rinha1
     depends_on:
       db:
