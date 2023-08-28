@@ -1,0 +1,48 @@
+name: Continuous Integration
+
+# Controls when the action will run. Triggers the workflow on push to the "cinnamon" branch.
+on:
+  push:
+    branches:
+      - main
+
+env:
+  DOCKER_USERNAME: "${{ github.actor }}"
+  DOCKER_PASSWORD: "${{ secrets.GITHUB_TOKEN }}"
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Setup Java JDK
+        uses: actions/setup-java@v1.4.3
+        with:
+          java-version: 17
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      # We will do everything on the same Gradle task to avoid Gradle executing tasks that it was already executed in a previous step
+      # (Example: Compiling everything again when publishing the Docker container)
+      - name: Build and Publish with Gradle
+        uses: gradle/gradle-build-action@v2
+        env:
+          # GitHub Actions has 7GBs of available RAM for workers, so let's bump it a bit up!
+          GRADLE_OPTS: -Xmx4096m -Xms4096m
+          ORG_GRADLE_PROJECT_PerfectDreamsUsername: ${{ secrets.PERFECTDREAMS_REPO_USERNAME }}
+          ORG_GRADLE_PROJECT_PerfectDreamsPassword: ${{ secrets.PERFECTDREAMS_REPO_PASSWORD }}
+        with:
+          cache-read-only: ${{ github.ref != 'refs/heads/main' }}
+          arguments: |
+            build
+            jib
