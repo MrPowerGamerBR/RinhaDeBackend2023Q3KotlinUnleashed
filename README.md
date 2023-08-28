@@ -8,7 +8,7 @@ Uma implementação feita em [Kotlin](https://kotlinlang.org), pois Kotlin is my
 
 A implementação foi baseada na implementação do [@distanteagle16](https://github.com/viniciusfonseca/rinha-backend-rust/) e do [@luucaspole](https://github.com/lukas8219/rinha-be-2023-q3)
 
-Mais informações na thread no Twitter!
+Mais informações, como comparações com as outras implementações, na [thread no Twitter](https://twitter.com/MrPowerGamerBR/status/1696170967230239071)!
 
 ## 🔗 Redes Sociais
 * **GitHub:** [`@MrPowerGamerBR`](https://github.com/MrPowerGamerBR)
