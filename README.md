@@ -10,6 +10,8 @@ A implementação foi baseada na implementação do [@distanteagle16](https://gi
 
 Mais informações, como comparações com as outras implementações, na [thread no Twitter](https://twitter.com/MrPowerGamerBR/status/1696170967230239071)!
 
+E, se você estiver curioso, você pode ver a [minha implementação original que eu tinha enviado para a Rinha de Backend](https://github.com/MrPowerGamerBR/RinhaDeBackend2023Q3Kotlin)! (a versão original pegava 6k pessoas, aí eu melhorei ela até chegar em 19k)
+
 ## 🔗 Redes Sociais
 * **GitHub:** [`@MrPowerGamerBR`](https://github.com/MrPowerGamerBR)
 * **Twitter/X:** [`@MrPowerGamerBR`](https://twitter.com/MrPowerGamerBR)
