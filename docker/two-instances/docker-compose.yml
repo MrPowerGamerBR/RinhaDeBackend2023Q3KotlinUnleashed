@@ -25,7 +25,7 @@ services:
       WEBSERVER_ENGINE: "cio"
       RINHA_CACHE: true
       RINHA_SEARCH: true
-      RINHA_POOL_SIZE: 8
+      RINHA_POOL_SIZE: 16
       JAVA_TOOL_OPTIONS: "-verbose:gc -Xmx768M -Xms768M -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch -XX:+ExitOnOutOfMemoryError"
     networks:
       - rinha-network
@@ -55,7 +55,7 @@ services:
       WEBSERVER_ENGINE: "cio"
       RINHA_CACHE: true
       RINHA_SEARCH: true
-      RINHA_POOL_SIZE: 8
+      RINHA_POOL_SIZE: 16
       JAVA_TOOL_OPTIONS: "-verbose:gc -Xmx768M -Xms768M -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch -XX:+ExitOnOutOfMemoryError"
     networks:
       - rinha-network
