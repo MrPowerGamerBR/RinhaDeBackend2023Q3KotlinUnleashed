@@ -87,6 +87,7 @@ class Database private constructor(val dataSource: HikariDataSource) {
         data jsonb
     );
 
+CREATE UNIQUE INDEX IF NOT EXISTS IDX_ID_UUID ON pessoas (id);
 CREATE INDEX IF NOT EXISTS IDX_PESSOAS_TEXT_TGRM ON pessoas USING GIST (text GIST_TRGM_OPS(SIGLEN=64));
             """)
         }

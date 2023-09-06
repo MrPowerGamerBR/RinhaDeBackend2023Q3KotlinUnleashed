@@ -1,7 +1,7 @@
 version: '3.5'
 services:
   rinha1:
-    image: ghcr.io/mrpowergamerbr/rinha-de-backend-2023-q3-unleashed@sha256:c4390f8133729aca18e0d785b9d47fc2173a15c7a7bff0b987d8238a4a20899d
+    image: ghcr.io/mrpowergamerbr/rinha-de-backend-2023-q3-unleashed@sha256:06ee13b1d5b39c74aeb354389ee739edc77ce0ab4047beeb112c19940bcc2a47
     hostname: rinha1
     depends_on:
       db:
@@ -22,7 +22,6 @@ services:
       POSTGRESQL_PASSWORD: postgres
       POSTGRESQL_DATABASE: rinhadebackend
       WEBSERVER_PORT: 9999
-      WEBSERVER_ENGINE: "cio"
       RINHA_CACHE: true
       RINHA_SEARCH: true
       RINHA_POOL_SIZE: 16
