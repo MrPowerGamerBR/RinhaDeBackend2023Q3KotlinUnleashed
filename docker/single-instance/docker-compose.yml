@@ -22,7 +22,7 @@ services:
       POSTGRESQL_PASSWORD: postgres
       POSTGRESQL_DATABASE: rinhadebackend
       WEBSERVER_PORT: 9999
-      RINHA_CACHE: true
+      RINHA_CACHE: false
       RINHA_SEARCH: true
       RINHA_POOL_SIZE: 16
       JAVA_TOOL_OPTIONS: "-verbose:gc -Xmx1792M -Xms1792M -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch -XX:+ExitOnOutOfMemoryError"

@@ -14,7 +14,7 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.4'
+          cpus: '0.35'
           memory: '1.0GB'
     environment:
       POSTGRESQL_ADDRESS: db
@@ -22,10 +22,10 @@ services:
       POSTGRESQL_PASSWORD: postgres
       POSTGRESQL_DATABASE: rinhadebackend
       WEBSERVER_PORT: 9999
-      RINHA_CACHE: true
+      RINHA_CACHE: false
       RINHA_SEARCH: true
       RINHA_POOL_SIZE: 16
-      JAVA_TOOL_OPTIONS: "-verbose:gc -Xmx768M -Xms768M -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch -XX:+ExitOnOutOfMemoryError"
+      JAVA_TOOL_OPTIONS: "-verbose:gc -Xmx768M -Xms768M -XX:+UnlockExperimentalVMOptions -XX:+AlwaysPreTouch -XX:+ExitOnOutOfMemoryError"
     networks:
       - rinha-network
 
@@ -43,7 +43,7 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.4'
+          cpus: '0.35'
           memory: '1.0GB'
     environment:
       POSTGRESQL_ADDRESS: db
@@ -51,11 +51,10 @@ services:
       POSTGRESQL_PASSWORD: postgres
       POSTGRESQL_DATABASE: rinhadebackend
       WEBSERVER_PORT: 9999
-      WEBSERVER_ENGINE: "cio"
-      RINHA_CACHE: true
+      RINHA_CACHE: false
       RINHA_SEARCH: true
       RINHA_POOL_SIZE: 16
-      JAVA_TOOL_OPTIONS: "-verbose:gc -Xmx768M -Xms768M -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:+AlwaysPreTouch -XX:+ExitOnOutOfMemoryError"
+      JAVA_TOOL_OPTIONS: "-verbose:gc -Xmx768M -Xms768M -XX:+UnlockExperimentalVMOptions -XX:+AlwaysPreTouch -XX:+ExitOnOutOfMemoryError"
     networks:
       - rinha-network
   db: # Banco de dados
@@ -63,7 +62,7 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.4'
+          cpus: '0.5'
           memory: '0.5GB'
     environment:
       POSTGRES_USER: postgres
@@ -96,7 +95,7 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.30'
+          cpus: '0.3'
           memory: '0.5GB'
     networks:
       - rinha-network
